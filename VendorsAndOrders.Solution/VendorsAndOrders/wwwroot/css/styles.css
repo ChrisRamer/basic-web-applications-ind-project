@@ -8,10 +8,12 @@ body {
 
 div#footer {
     position:fixed;
-    bottom:0px;
-    left:0px;
-    width:100%;
+    bottom:-5px;
+    left:50%;
+    transform: translate(-50%, 0%);
+    width:30%;
     color:rgb(136, 136, 136);
     background:#333;
     padding:8px;
+    border-radius: 10px;
 }
