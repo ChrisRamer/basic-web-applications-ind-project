@@ -1,0 +1,17 @@
+body {
+	background-color: rgb(36, 36, 36);
+	color: rgb(184, 184, 184);
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+div#footer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    color:#CCC;
+    background:#333;
+    padding:8px;
+}
