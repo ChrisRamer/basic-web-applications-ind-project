@@ -5,7 +5,7 @@
 }
 
 <h3>You've made @Model["vendor"].Orders.Count orders with @Model["vendor"].Name</h3>
-@if (@Model["vendor"].Orders.Count == 0)
+@if (@Model["vendor"].Orders.Count > 0)
 {
 	 <h3>Date of last order: @Model["vendor"].Orders[Model["vendor"].Orders.Count - 1].Date</h3>
 }
