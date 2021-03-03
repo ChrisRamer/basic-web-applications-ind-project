@@ -1,0 +1,27 @@
+@using VendorsAndOrders.Models;
+
+@{
+	Layout = "_Layout";
+}
+
+<h1>Vendors</h1>
+
+@if(Model.Count == 0)
+{
+	<p>There are no items in the list.</p>
+}
+
+<ul>
+	@foreach (Vendor vendor in Model)
+	{
+		<lI><a href="/vendors/@vendor.Id">@vendor.Name</a></lI>
+	}
+</ul>
+
+<a href="/vendors/new">Add a new vendor</a>
+@if(Model.Count > 0)
+{
+	<form action="/vendors/delete" method="post">
+		<button type="submit" name="button">Clear all vendors</button>
+	</form>
+}
