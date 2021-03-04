@@ -8,6 +8,9 @@ namespace VendorsAndOrdersTests
 	[TestClass]
 	public class VendorTests : IDisposable
 	{
+		string name = "some vendor";
+		string description = "some description";
+
 		public void Dispose()
 		{
 			Vendor.ClearAll();
@@ -16,7 +19,7 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
 		{
-			Vendor newVendor = new Vendor("some vendor", "some description");
+			Vendor newVendor = new Vendor(name, description);
 			Assert.AreEqual(typeof(Vendor), newVendor.GetType());
 		}
 
@@ -24,7 +27,7 @@ namespace VendorsAndOrdersTests
 		public void GetName_ReturnsName_String()
 		{
 			string name = "some vendor";
-			Vendor newVendor = new Vendor(name, "some description");
+			Vendor newVendor = new Vendor(name, description);
 
 			string result = newVendor.Name;
 
@@ -34,7 +37,7 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void GetId_ReturnsVendorId_Int()
 		{
-			Vendor newVendor = new Vendor("some vendor", "some description");
+			Vendor newVendor = new Vendor(name, description);
 
 			int result = newVendor.Id;
 
@@ -44,8 +47,8 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void GetAll_ReturnsAllVendorObjects_VendorList()
 		{
-			Vendor newVendor1 = new Vendor("vendor1", "some description");
-			Vendor newVendor2 = new Vendor("vendor2", "some description");
+			Vendor newVendor1 = new Vendor(name, description);
+			Vendor newVendor2 = new Vendor(name, description);
 			List<Vendor> vendors = new List<Vendor> { newVendor1, newVendor2 };
 
 			List<Vendor> result = Vendor.GetAll();
@@ -56,8 +59,8 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void Find_ReturnsCorrectVendor_Vendor()
 		{
-			Vendor newVendor1 = new Vendor("vendor1", "some description");
-			Vendor newVendor2 = new Vendor("vendor2", "some description");
+			Vendor newVendor1 = new Vendor(name, description);
+			Vendor newVendor2 = new Vendor(name, description);
 			List<Vendor> vendors = new List<Vendor> { newVendor1, newVendor2 };
 
 			Vendor result = Vendor.Find(2);
@@ -68,9 +71,9 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void AddItem_AssociatesOrderWithVendor_OrderList()
 		{
-			Order newOrder = new Order("some order", "some description", 69, "3/1/2021");
+			Order newOrder = new Order("some order", "some description", 69, new DateTime(2021, 4, 4));
 			List<Order> orders = new List<Order> { newOrder };
-			Vendor newVendor = new Vendor("some vendor", "some description");
+			Vendor newVendor = new Vendor(name, description);
 			newVendor.AddOrder(newOrder);
 
 			List<Order> result = newVendor.Orders;

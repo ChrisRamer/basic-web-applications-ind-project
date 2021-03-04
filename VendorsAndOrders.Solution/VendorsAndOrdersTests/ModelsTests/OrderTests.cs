@@ -8,6 +8,11 @@ namespace VendorsAndOrdersTests
 	[TestClass]
 	public class OrderTests : IDisposable
 	{
+		string name = "some order";
+		string description = "some description";
+		int price = 69;
+		DateTime date = new DateTime(2021, 4, 4);
+
 		public void Dispose()
 		{
 			Order.ClearAll();
@@ -16,15 +21,14 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void OrderConstructor_CreatesInstanceOfOrder_Order()
 		{
-			Order newOrder = new Order("some order", "some description", 69, "3/1/2021");
+			Order newOrder = new Order(name, description, price, date);
 			Assert.AreEqual(typeof(Order), newOrder.GetType());
 		}
 
 		[TestMethod]
 		public void GetDescription_ReturnsDescription_String()
 		{
-			string description = "some description";
-			Order newOrder = new Order("some order", description, 69, "3/1/2021");
+			Order newOrder = new Order(name, description, price, date);
 
 			string result = newOrder.Description;
 
@@ -34,8 +38,8 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void GetAll_ReturnsOrders_OrderList()
 		{
-			Order newOrder1 = new Order("some order", "some description", 69, "3/1/2021");
-			Order newOrder2 = new Order("some order", "some description", 69, "3/1/2021");
+			Order newOrder1 = new Order(name, description, price, date);
+			Order newOrder2 = new Order(name, description, price, date);
 			List<Order> orders = new List<Order> { newOrder1, newOrder2 };
 
 			List<Order> result = Order.GetAll();
@@ -46,7 +50,7 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void GetId_OrderInstantiatesWithAnIDAndGetterReturns_Int()
 		{
-			Order newOrder = new Order("some order", "some description", 69, "3/1/2021");
+			Order newOrder = new Order(name, description, price, date);
 
 			int result = newOrder.Id;
 
@@ -56,8 +60,8 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void Find_ReturnsCorrectOrder_Order()
 		{
-			Order newOrder1 = new Order("some order", "some description", 69, "3/1/2021");
-			Order newOrder2 = new Order("some order", "some description", 69, "3/1/2021");
+			Order newOrder1 = new Order(name, description, price, date);
+			Order newOrder2 = new Order(name, description, price, date);
 
 			Order result = Order.Find(2);
 
