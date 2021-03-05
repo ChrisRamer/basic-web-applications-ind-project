@@ -12,7 +12,7 @@ For my good friend Pierre to keep track of all your vendors and orders.
 
 Clone this repo to your PC.
 Open it up in an IDE of your choice and open the terminal and navigate to the directory of the main project (`cd  "[where you stored project]\VendorsAndOrders\VendorsAndOrders.Solution"`).
-Then in terminal, run the command `dotnet watch run` and click on the localhost:5000 link to load the site.
+Then in terminal, run the command `dotnet watch run` and click on the `localhost:5000` link to load the site.
 
 ## Specs
 
