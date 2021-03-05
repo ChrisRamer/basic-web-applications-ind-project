@@ -16,9 +16,6 @@
 }
 
 <br>
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"].Name</a>
-
-<br><br>
 
 <ol>
 	@foreach (Order order in @Model["orders"])
@@ -26,3 +23,10 @@
 		<li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title for $@order.Price on @order.Date.ToShortDateString()</a></li>
 	}
 </ol>
+
+<br>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"].Name</a>
+<br>
+<a href="/vendors">Return to vendors page</a>
+<br>
+<a href="/">Return to homepage</a>
