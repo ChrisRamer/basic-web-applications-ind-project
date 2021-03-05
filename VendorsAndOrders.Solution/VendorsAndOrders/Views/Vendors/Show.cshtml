@@ -4,15 +4,25 @@
 	Layout = "_Layout";
 }
 
-<h3>You've made @Model["vendor"].Orders.Count orders with @Model["vendor"].Name</h3>
-@if (@Model["vendor"].Orders.Count > 0)
-{
-	 <h3>Date of last order: @Model["vendor"].Orders[Model["vendor"].Orders.Count - 1].Date</h3>
+@{
+	Vendor vendor = Model["vendor"];
+	List<Order> orders = vendor.Orders;
+
+	<h3>You've made <b>@orders.Count order(s)</b> with <b>@vendor.Name</b></h3>
+	if (orders.Count > 0)
+	{
+	 <h4>Date of last order: <b>@orders[orders.Count -1].Date.ToShortDateString()</b></h4>
+	}
 }
+
+<br>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"].Name</a>
+
+<br><br>
 
 <ol>
 	@foreach (Order order in @Model["orders"])
 	{
-		<li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title for $@order.Price on @order.Date</a></li>
+		<li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title for $@order.Price on @order.Date.ToShortDateString()</a></li>
 	}
 </ol>
