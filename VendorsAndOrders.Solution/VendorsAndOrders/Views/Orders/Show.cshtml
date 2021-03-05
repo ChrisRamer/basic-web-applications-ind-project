@@ -1,0 +1,23 @@
+@using VendorsAndOrders.Models;
+
+@{
+	Layout = "_Layout";
+}
+
+@{
+	Vendor vendor = Model["vendor"];
+	Order order = Model["order"];
+	<h3><b>@order.Title for @vendor.Name</b></h3>
+	<br>
+	<h4><b>Description:</b> @order.Description</h4>
+	<h4><b>Date:</b> @order.Date.ToShortDateString()</h4>
+	<h4><b>Price:</b> $@order.Price</h4>
+
+	<br>
+	<a href="/vendors/@vendor.Id">Return to @vendor.Name page</a>
+}
+
+<br>
+<a href="/vendors">Return to vendors page</a>
+<br>
+<a href="/">Return home</a>
