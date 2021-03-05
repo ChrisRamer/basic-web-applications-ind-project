@@ -7,7 +7,7 @@
 @{
 	Vendor vendor = Model["vendor"];
 	Order order = Model["order"];
-	<h3><b>@order.Title for @vendor.Name</b></h3>
+	<h3 id="title"><b>@order.Title for @vendor.Name</b></h3>
 	<br>
 	<h4><b>Description:</b> @order.Description</h4>
 	<h4><b>Date:</b> @order.Date.ToShortDateString()</h4>

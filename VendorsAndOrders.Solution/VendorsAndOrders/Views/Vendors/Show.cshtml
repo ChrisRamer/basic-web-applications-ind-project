@@ -8,10 +8,10 @@
 	Vendor vendor = Model["vendor"];
 	List<Order> orders = vendor.Orders;
 
-	<h3>You've made <b>@orders.Count order(s)</b> with <b>@vendor.Name</b></h3>
+	<h3 id="title">You've made <b>@orders.Count order(s)</b> with <b>@vendor.Name</b></h3>
 	if (orders.Count > 0)
 	{
-	 <h4>Date of last order: <b>@orders[orders.Count -1].Date.ToShortDateString()</b></h4>
+	 <h4 id="subtitle">Date of last order: <b>@orders[orders.Count -1].Date.ToShortDateString()</b></h4>
 	}
 }
 
