@@ -24,7 +24,7 @@ namespace VendorsAndOrders.Controllers
 		public ActionResult Create(string name, string description)
 		{
 			Vendor newVendor = new Vendor(name, description);
-			return RedirectToAction("Index");
+			return RedirectToAction("Index", "Home");
 		}
 
 		[HttpGet("/vendors/{id}")]
