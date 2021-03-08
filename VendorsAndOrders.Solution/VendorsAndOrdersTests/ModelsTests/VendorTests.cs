@@ -26,7 +26,6 @@ namespace VendorsAndOrdersTests
 		[TestMethod]
 		public void GetName_ReturnsName_String()
 		{
-			string name = "some vendor";
 			Vendor newVendor = new Vendor(name, description);
 
 			string result = newVendor.Name;
@@ -60,8 +59,7 @@ namespace VendorsAndOrdersTests
 		public void Find_ReturnsCorrectVendor_Vendor()
 		{
 			Vendor newVendor1 = new Vendor(name, description);
-			Vendor newVendor2 = new Vendor(name, description);
-			List<Vendor> vendors = new List<Vendor> { newVendor1, newVendor2 };
+			Vendor newVendor2 = new Vendor("some vendor 2", "some description 2");
 
 			Vendor result = Vendor.Find(2);
 
@@ -69,16 +67,15 @@ namespace VendorsAndOrdersTests
 		}
 
 		[TestMethod]
-		public void AddItem_AssociatesOrderWithVendor_OrderList()
+		public void AddOrder_AssociatesOrderWithVendor_OrderList()
 		{
-			Order newOrder = new Order("some order", "some description", 69, new DateTime(2021, 4, 4));
-			List<Order> orders = new List<Order> { newOrder };
+			Order newOrder = new Order("some order", description, 69, new DateTime(2021, 4, 4));
 			Vendor newVendor = new Vendor(name, description);
 			newVendor.AddOrder(newOrder);
 
 			List<Order> result = newVendor.Orders;
 
-			CollectionAssert.AreEqual(orders, result);
+			CollectionAssert.AreEqual(Order.GetAll(), result);
 		}
 	}
 }

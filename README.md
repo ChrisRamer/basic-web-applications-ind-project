@@ -24,7 +24,8 @@ Clone this repo. Run terminal command `dotnet run` from the `VendorsAndOrders` d
 ## Technologies Used
 
 * C#
-* MVC
+* ASP.NET
+* .NET Core
 
 ### License
 

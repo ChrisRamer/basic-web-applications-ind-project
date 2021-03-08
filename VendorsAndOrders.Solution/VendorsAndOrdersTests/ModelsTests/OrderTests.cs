@@ -61,7 +61,7 @@ namespace VendorsAndOrdersTests
 		public void Find_ReturnsCorrectOrder_Order()
 		{
 			Order newOrder1 = new Order(name, description, price, date);
-			Order newOrder2 = new Order(name, description, price, date);
+			Order newOrder2 = new Order("some order 2", "some description 2", 69420, new DateTime(2021, 3, 8));
 
 			Order result = Order.Find(2);
 
