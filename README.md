@@ -10,7 +10,7 @@ For my good friend Pierre to keep track of all your vendors and orders.
 
 ## Setup/Installation Requirements
 
-Run terminal command `dotnet run` from the `VendorsAndOrders` directory.
+Clone this repo. Run terminal command `dotnet run` from the `VendorsAndOrders` directory. Then open `localhost:5000` in your browser.
 
 ## Specs
 
