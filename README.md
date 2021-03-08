@@ -10,9 +10,7 @@ For my good friend Pierre to keep track of all your vendors and orders.
 
 ## Setup/Installation Requirements
 
-Clone this repo to your PC.
-Open it up in an IDE of your choice and open the terminal and navigate to the directory of the main project (`cd  "[where you stored project]\VendorsAndOrders\VendorsAndOrders.Solution\VendorsAndOrders"`).
-Then in terminal, run the command `dotnet run` and click on the `localhost:5000` link to load the site.
+Run terminal command `dotnet run` from the `VendorsAndOrders` directory.
 
 ## Specs
 
